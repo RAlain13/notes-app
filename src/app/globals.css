@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -24,4 +24,64 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* Layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+body {
+  @apply bg-gray-200 m-0 font-poppins;
+}
+header {
+  @apply bg-white;
+}
+header .container {
+  @apply max-w-screen-xl mx-auto px-4 flex items-center justify-between py-2;
+}
+header a {
+  @apply text-gray-700 no-underline;
+}
+.pages {
+  @apply max-w-screen-xl mx-auto p-5;
+}
+
+/* Homepage */
+.home {
+  @apply grid grid-cols-3fr-1fr gap-10;
+}
+.note-details {
+  @apply bg-white rounded-lg m-4 p-4 relative shadow-md;
+}
+.note-details h4 {
+  @apply mb-4 text-primary text-lg font-semibold;
+}
+.note-details p {
+  @apply mb-0 text-sm text-gray-600;
+}
+.note-details span {
+  @apply absolute top-4 right-4 cursor-pointer bg-gray-200 p-2 rounded-full text-gray-700;
+}
+
+/* New note form */
+label, input, textarea {
+  @apply block;
+}
+input, textarea {
+  @apply p-4 mt-4 mb-8 w-full border border-gray-300 rounded box-border;
+}
+form button {
+  @apply bg-primary border-0 text-white p-4 font-poppins rounded cursor-pointer;
+}
+div.error {
+  @apply p-4 bg-error border border-error text-error rounded my-5;
+}
+input.error, textarea.error {
+  @apply border border-error;
 }
