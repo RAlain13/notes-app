@@ -1,87 +1,102 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* google font */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-
-
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
-
-/* Layout */
+/* layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
 }
 body {
-  @apply bg-gray-200 m-0 font-poppins;
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
 }
 header {
-  @apply bg-white;
+  background: #fff;
 }
 header .container {
-  @apply max-w-screen-xl mx-auto px-4 flex items-center justify-between py-2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header a {
-  @apply text-gray-700 no-underline;
+  color: #333;
+  text-decoration: none;
 }
-.pages {
-  @apply max-w-screen-xl mx-auto p-5;
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
-/* Homepage */
+/* homepage */
 .home {
-  @apply grid grid-cols-3fr-1fr gap-10;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
 }
 .note-details {
-  @apply bg-white rounded-lg m-4 p-4 relative shadow-md;
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .note-details h4 {
-  @apply mb-4 text-primary text-lg font-semibold;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
 }
 .note-details p {
-  @apply mb-0 text-sm text-gray-600;
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
 }
 .note-details span {
-  @apply absolute top-4 right-4 cursor-pointer bg-gray-200 p-2 rounded-full text-gray-700;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
 }
 
-/* New note form */
-label, input, textarea {
-  @apply block;
+/* new workout form */
+label, input {
+  display: block;
 }
-input, textarea {
-  @apply p-4 mt-4 mb-8 w-full border border-gray-300 rounded box-border;
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 form button {
-  @apply bg-primary border-0 text-white p-4 font-poppins rounded cursor-pointer;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
 }
 div.error {
-  @apply p-4 bg-error border border-error text-error rounded my-5;
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
 }
-input.error, textarea.error {
-  @apply border border-error;
-}
+input.error {
+  border: 1px solid var(--error);
+} 

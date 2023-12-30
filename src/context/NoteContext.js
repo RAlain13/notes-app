@@ -1,3 +1,4 @@
+'use client'
 import { createContext, useReducer } from 'react';
 
 export const NotesContext = createContext();
@@ -10,8 +11,17 @@ export const notesReducer = (state, action) => {
       };
     case 'CREATE_NOTE':
       return {
-        notes: [action.payload, ...state.notes],
+        notes: [...state.notes,action.payload],
       };
+      case 'UPDATE_NOTE':
+        return {
+          notes: state.notes.map((n)=>{
+          if (n.id === action.payload.id){
+            return {...n, title:action.payload.newNote.title,description:action.payload.newNote.description,note:action.payload.newNote.note}
+          }
+          return n;
+        })
+      }
     case 'DELETE_NOTE':
       return {
         notes: state.notes.filter((n) => n.id !== action.payload),
@@ -23,7 +33,7 @@ export const notesReducer = (state, action) => {
 
 export const NotesContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(notesReducer, {
-    notes: null,
+    notes: [],
   });
 
   return (
